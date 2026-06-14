@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>신앙과 이성 — 교육자료 시리즈</title>
+<style>
+  :root {
+    --bg: #f4f6f9;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --muted: #6c757d;
+    --radius: 16px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.09);
+
+    /* 시리즈 컬러 */
+    --ec:  #2d6a4f; --ec-dark:  #1b4332; --ec-light:  #52b788;
+    --ba:  #7b2d8b; --ba-dark:  #4a1942; --ba-light:  #b067c2;
+    --bh:  #8b5e3c; --bh-dark:  #4a2d0e; --bh-light:  #c8956a;
+    --ai:  #2563eb; --ai-dark:  #1e3a8a; --ai-light:  #60a5fa;
+    --eco: #166534; --eco-dark: #052e16; --eco-light: #4ade80;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── 헤더 ── */
+  header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f2027 100%);
+    color: #fff;
+    padding: 60px 24px 48px;
+    text-align: center;
+  }
+  .header-icon { font-size: 3.4rem; display: block; margin-bottom: 16px; }
+  header h1 { font-size: 2.3rem; font-weight: 900; letter-spacing: -.5px; margin-bottom: 10px; }
+  header h1 span { opacity: .45; font-weight: 400; font-size: 1.4rem; margin-left: 10px; letter-spacing: 0; }
+  header p { opacity: .75; font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.8; }
+  .header-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+  .header-badge {
+    background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22);
+    border-radius: 20px; padding: 4px 14px; font-size: .8rem; color: rgba(255,255,255,.85);
+  }
+
+  /* ── 메인 ── */
+  main { flex: 1; max-width: 1020px; margin: 0 auto; padding: 56px 20px 80px; width: 100%; }
+
+  .section-label {
+    font-size: .8rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #dee2e6; }
+
+  /* ── 시리즈 그리드 ── */
+  .series-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 44px;
+  }
+  @media (max-width: 860px) { .series-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .series-grid { grid-template-columns: 1fr; } }
+
+  .series-card {
+    background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 30px 24px 26px; text-decoration: none; color: var(--text);
+    display: flex; flex-direction: column; gap: 12px;
+    border: 2px solid transparent; transition: all .22s;
+    position: relative; overflow: hidden;
+  }
+  .series-card:hover { transform: translateY(-4px); box-shadow: 0 10px 40px rgba(0,0,0,0.13); }
+  .series-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+  }
+
+  /* EC */
+  .series-card.ec { border-color: var(--ec-light); }
+  .series-card.ec:hover { border-color: var(--ec); }
+  .series-card.ec::before { background: linear-gradient(90deg, var(--ec-light), var(--ec-dark)); }
+  .series-card.ec .s-code { color: var(--ec); }
+  .series-card.ec .s-btn { background: var(--ec); }
+  /* BA */
+  .series-card.ba { border-color: var(--ba-light); }
+  .series-card.ba:hover { border-color: var(--ba); }
+  .series-card.ba::before { background: linear-gradient(90deg, var(--ba-light), var(--ba-dark)); }
+  .series-card.ba .s-code { color: var(--ba); }
+  .series-card.ba .s-btn { background: var(--ba); }
+  /* BH */
+  .series-card.bh { border-color: var(--bh-light); }
+  .series-card.bh:hover { border-color: var(--bh); }
+  .series-card.bh::before { background: linear-gradient(90deg, var(--bh-light), var(--bh-dark)); }
+  .series-card.bh .s-code { color: var(--bh); }
+  .series-card.bh .s-btn { background: var(--bh); }
+
+  .s-emoji { font-size: 2.6rem; }
+  .s-code { font-size: .72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+  .s-title { font-size: 1.2rem; font-weight: 800; line-height: 1.35; }
+  .s-desc { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+  .s-versions {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px;
+  }
+  .s-ver {
+    font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;
+    background: #f1f3f5; color: var(--muted);
+  }
+  .s-ver.done { background: #e8f5e9; color: #2d6a4f; }
+  .s-ver.done.ba-ver { background: #f3e5f5; color: var(--ba); }
+  .s-ver.done.bh-ver { background: #fdf3ec; color: var(--bh); }
+
+  .s-btn {
+    margin-top: auto; display: inline-block; padding: 11px 0;
+    border-radius: 28px; font-size: .88rem; font-weight: 700;
+    text-align: center; color: #fff; transition: opacity .2s;
+  }
+  .series-card:hover .s-btn { opacity: .88; }
+
+  /* ── 준비 중 그리드 ── */
+  .coming-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  @media (max-width: 560px) { .coming-grid { grid-template-columns: 1fr; } }
+
+  .coming-card {
+    background: var(--card); border-radius: var(--radius);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    padding: 28px 24px 24px;
+    display: flex; flex-direction: column; gap: 10px;
+    border: 2px dashed #dee2e6;
+    opacity: .6; cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .coming-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: #dee2e6;
+  }
+  .coming-card.ai::before { background: linear-gradient(90deg, var(--ai-light), var(--ai)); opacity: .4; }
+  .coming-card.eco::before { background: linear-gradient(90deg, var(--eco-light), var(--eco)); opacity: .4; }
+
+  .coming-badge {
+    display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .8px;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 10px;
+    background: #f1f3f5; color: var(--muted); width: fit-content;
+  }
+  .coming-title { font-size: 1.1rem; font-weight: 800; }
+  .coming-desc { font-size: .87rem; color: var(--muted); line-height: 1.65; }
+  .coming-topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .coming-topic {
+    font-size: .75rem; padding: 3px 10px; border-radius: 12px;
+    background: #f4f6f9; color: var(--muted); border: 1px solid #dee2e6;
+  }
+
+  /* ── 인포박스 ── */
+  .info-box {
+    background: var(--card); border-radius: var(--radius);
+    padding: 22px 26px; box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    margin-top: 40px; display: flex; gap: 14px; align-items: flex-start;
+    border-left: 4px solid #f4a261;
+  }
+  .info-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .info-box p { font-size: .88rem; color: var(--muted); line-height: 1.75; }
+  .info-box strong { color: var(--text); }
+
+  /* ── 푸터 ── */
+  footer {
+    background: #0f172a; color: rgba(255,255,255,.55);
+    text-align: center; padding: 22px; font-size: .8rem;
+  }
+  footer a { color: rgba(255,255,255,.75); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 480px) {
+    header { padding: 40px 16px 32px; }
+    header h1 { font-size: 1.7rem; }
+    header h1 span { display: block; margin: 4px 0 0; }
+    main { padding: 36px 14px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="header-icon">✝️</span>
+  <h1>신앙과 이성 <span>Faith &amp; Reason</span></h1>
+  <p>성경, 신학, 과학, 고고학의 교차점에서<br>믿음의 지성적 뿌리를 탐구하는 교육자료 시리즈.</p>
+  <div class="header-badges">
+    <span class="header-badge">📖 성경 해석학</span>
+    <span class="header-badge">🔬 과학과 신앙</span>
+    <span class="header-badge">🏺 고고학</span>
+    <span class="header-badge">🧠 신학</span>
+    <span class="header-badge">🌍 고대근동</span>
+  </div>
+</header>
+
+<main>
+
+  <p class="section-label">완성된 시리즈</p>
+
+  <div class="series-grid">
+
+    <!-- EC -->
+    <a href="https://isaac-math.github.io/Evolutionary-Creation/" class="series-card ec">
+      <span class="s-emoji">🌿</span>
+      <span class="s-code">EC — 진화적 창조</span>
+      <span class="s-title">성경과 진화론,<br>함께 읽을 수 있을까?</span>
+      <p class="s-desc">창세기 해석, 진화생물학, 고대근동 신화, Imago Dei와 아담 문제까지.</p>
+      <div class="s-versions">
+        <span class="s-ver done">어린이</span>
+        <span class="s-ver done">청소년</span>
+        <span class="s-ver done">대학생</span>
+      </div>
+      <span class="s-btn">시리즈 보기 →</span>
+    </a>
+
+    <!-- BA -->
+    <a href="https://isaac-math.github.io/Biblical-Authority/" class="series-card ba">
+      <span class="s-emoji">📜</span>
+      <span class="s-code">BA — 성경의 권위</span>
+      <span class="s-title">성경의 무오성과<br>권위의 근거</span>
+      <p class="s-desc">무오성 스펙트럼, 시카고 선언, 영감론, 정경 형성, 어려운 본문 다루기.</p>
+      <div class="s-versions">
+        <span class="s-ver done ba-ver">청소년</span>
+        <span class="s-ver done ba-ver">대학생</span>
+        <span class="s-ver">어린이 준비 중</span>
+      </div>
+      <span class="s-btn">시리즈 보기 →</span>
+    </a>
+
+    <!-- BH -->
+    <a href="https://isaac-math.github.io/Biblical-Historicity/" class="series-card bh">
+      <span class="s-emoji">🏛️</span>
+      <span class="s-code">BH — 역사성 논쟁</span>
+      <span class="s-title">출애굽과 다윗 왕국은<br>역사적 사건인가?</span>
+      <p class="s-desc">고고학과 성경, 핀켈스타인 vs 마자르, 텔 단 석비, DtrH, 에레프 가설.</p>
+      <div class="s-versions">
+        <span class="s-ver done bh-ver">청소년</span>
+        <span class="s-ver done bh-ver">대학생</span>
+        <span class="s-ver">어린이 준비 중</span>
+      </div>
+      <span class="s-btn">시리즈 보기 →</span>
+    </a>
+
+  </div>
+
+  <p class="section-label">준비 중인 시리즈</p>
+
+  <div class="coming-grid">
+
+    <!-- AI -->
+    <div class="coming-card ai">
+      <span class="s-emoji">🤖</span>
+      <span class="coming-badge">준비 중 — AI &amp; Faith</span>
+      <span class="coming-title">인공지능과 신앙</span>
+      <p class="coming-desc">AI 시대에 Imago Dei란 무엇인가? 영혼, 의식, 인간 고유성, 트랜스휴머니즘을 신학적으로 탐구합니다.</p>
+      <div class="coming-topics">
+        <span class="coming-topic">AI와 의식</span>
+        <span class="coming-topic">영혼론</span>
+        <span class="coming-topic">Imago Dei</span>
+        <span class="coming-topic">트랜스휴머니즘</span>
+        <span class="coming-topic">기술윤리</span>
+      </div>
+    </div>
+
+    <!-- ECO -->
+    <div class="coming-card eco">
+      <span class="s-emoji">🌱</span>
+      <span class="coming-badge">준비 중 — Eco-Theology</span>
+      <span class="coming-title">기독교 생태신학</span>
+      <p class="coming-desc">"다스리라"(창 1:28)는 착취인가, 청지기직인가? 기후변화와 신학적 응답, 라우다토 시를 함께 읽습니다.</p>
+      <div class="coming-topics">
+        <span class="coming-topic">청지기직</span>
+        <span class="coming-topic">기후변화</span>
+        <span class="coming-topic">동물윤리</span>
+        <span class="coming-topic">새 창조론</span>
+        <span class="coming-topic">라우다토 시</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="info-box">
+    <span class="info-icon">💡</span>
+    <p><strong>이 시리즈에 대해</strong><br>
+    "신앙과 이성"은 신학·성경학·자연과학·철학의 경계에 있는 질문들을 청소년과 대학생 눈높이에 맞춰 탐구하는 교육자료 시리즈입니다. 각 주제는 독립적으로 읽을 수 있지만, EC → BA → BH 순서로 읽으면 창세기 해석에서 시작해 성경의 권위, 역사성 문제로 자연스럽게 심화됩니다. Made by Isaac with Claude.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>Made by Isaac with Claude | 신앙과 이성 교육자료 시리즈</p>
+</footer>
+
+</body>
+</html>
