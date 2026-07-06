@@ -18,7 +18,7 @@
     --ba:  #7b2d8b; --ba-dark:  #4a1942; --ba-light:  #b067c2;
     --bh:  #8b5e3c; --bh-dark:  #4a2d0e; --bh-light:  #c8956a;
     --ai:  #274c77; --ai-dark:  #14213d; --ai-light:  #6096ba;
-    --eco: #166534; --eco-dark: #052e16; --eco-light: #4ade80;
+    --eco: #0f766e; --eco-dark: #0b4f4a; --eco-light: #52b7a8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -119,6 +119,13 @@
   .series-card.ai::before { background: linear-gradient(90deg, var(--ai-light), var(--ai-dark)); }
   .series-card.ai .s-code { color: var(--ai); }
   .series-card.ai .s-btn { background: var(--ai); }
+  /* ECO */
+  .series-card.eco { border-color: var(--eco-light); }
+  .series-card.eco:hover { border-color: var(--eco); }
+  .series-card.eco::before { background: linear-gradient(90deg, var(--eco-light), var(--eco-dark)); }
+  .series-card.eco .s-code { color: var(--eco); }
+  .series-card.eco .s-btn { background: var(--eco); }
+  .s-ver.done.eco-ver { background: #d8f0ec; color: var(--eco); }
 
   .s-btn {
     margin-top: auto; display: inline-block; padding: 11px 0;
@@ -268,26 +275,19 @@
       <span class="s-btn">시리즈 보기 →</span>
     </a>
 
-  </div>
-
-  <p class="section-label">준비 중인 시리즈</p>
-
-  <div class="coming-grid">
-
     <!-- ECO -->
-    <div class="coming-card eco">
-      <span class="s-emoji">🌱</span>
-      <span class="coming-badge">준비 중 — Eco-Theology</span>
-      <span class="coming-title">기독교 생태신학</span>
-      <p class="coming-desc">"다스리라"(창 1:28)는 착취인가, 청지기직인가? 기후변화와 신학적 응답, 라우다토 시를 함께 읽습니다.</p>
-      <div class="coming-topics">
-        <span class="coming-topic">청지기직</span>
-        <span class="coming-topic">기후변화</span>
-        <span class="coming-topic">동물윤리</span>
-        <span class="coming-topic">새 창조론</span>
-        <span class="coming-topic">라우다토 시</span>
+    <a href="https://isaac-math.github.io/Eco-Theology/" class="series-card eco">
+      <span class="s-emoji">🌍</span>
+      <span class="s-code">ECO — 생태신학</span>
+      <span class="s-title">"다스리라"의 재발견 —<br>창조 돌봄의 성경신학</span>
+      <p class="s-desc">라다·카바쉬 원문 주해, 린 화이트 논쟁, 라우다토 시 심층 분석, 벧후 3:10 본문비평까지.</p>
+      <div class="s-versions">
+        <span class="s-ver done eco-ver">청소년</span>
+        <span class="s-ver done eco-ver">대학생</span>
+        <span class="s-ver">어린이 미제작</span>
       </div>
-    </div>
+      <span class="s-btn">시리즈 보기 →</span>
+    </a>
 
   </div>
 
