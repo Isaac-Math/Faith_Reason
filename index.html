@@ -17,7 +17,7 @@
     --ec:  #2d6a4f; --ec-dark:  #1b4332; --ec-light:  #52b788;
     --ba:  #7b2d8b; --ba-dark:  #4a1942; --ba-light:  #b067c2;
     --bh:  #8b5e3c; --bh-dark:  #4a2d0e; --bh-light:  #c8956a;
-    --ai:  #2563eb; --ai-dark:  #1e3a8a; --ai-light:  #60a5fa;
+    --ai:  #274c77; --ai-dark:  #14213d; --ai-light:  #6096ba;
     --eco: #166534; --eco-dark: #052e16; --eco-light: #4ade80;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -112,6 +112,13 @@
   .s-ver.done { background: #e8f5e9; color: #2d6a4f; }
   .s-ver.done.ba-ver { background: #f3e5f5; color: var(--ba); }
   .s-ver.done.bh-ver { background: #fdf3ec; color: var(--bh); }
+  .s-ver.done.ai-ver { background: #e8eef7; color: var(--ai); }
+  /* AI */
+  .series-card.ai { border-color: var(--ai-light); }
+  .series-card.ai:hover { border-color: var(--ai); }
+  .series-card.ai::before { background: linear-gradient(90deg, var(--ai-light), var(--ai-dark)); }
+  .series-card.ai .s-code { color: var(--ai); }
+  .series-card.ai .s-btn { background: var(--ai); }
 
   .s-btn {
     margin-top: auto; display: inline-block; padding: 11px 0;
@@ -247,26 +254,25 @@
       <span class="s-btn">시리즈 보기 →</span>
     </a>
 
+    <!-- AI -->
+    <a href="https://isaac-math.github.io/AI-Faith/" class="series-card ai">
+      <span class="s-emoji">🤖</span>
+      <span class="s-code">AI — 인공지능과 신앙</span>
+      <span class="s-title">AI 시대, 하나님의 형상은<br>무엇을 뜻하는가</span>
+      <p class="s-desc">의식철학·영혼론 스펙트럼, 히브리어 형상론 원문 분석, Antiqua et Nova부터 Magnifica Humanitas까지.</p>
+      <div class="s-versions">
+        <span class="s-ver done ai-ver">청소년</span>
+        <span class="s-ver done ai-ver">대학생</span>
+        <span class="s-ver">어린이 미제작</span>
+      </div>
+      <span class="s-btn">시리즈 보기 →</span>
+    </a>
+
   </div>
 
   <p class="section-label">준비 중인 시리즈</p>
 
   <div class="coming-grid">
-
-    <!-- AI -->
-    <div class="coming-card ai">
-      <span class="s-emoji">🤖</span>
-      <span class="coming-badge">준비 중 — AI &amp; Faith</span>
-      <span class="coming-title">인공지능과 신앙</span>
-      <p class="coming-desc">AI 시대에 Imago Dei란 무엇인가? 영혼, 의식, 인간 고유성, 트랜스휴머니즘을 신학적으로 탐구합니다.</p>
-      <div class="coming-topics">
-        <span class="coming-topic">AI와 의식</span>
-        <span class="coming-topic">영혼론</span>
-        <span class="coming-topic">Imago Dei</span>
-        <span class="coming-topic">트랜스휴머니즘</span>
-        <span class="coming-topic">기술윤리</span>
-      </div>
-    </div>
 
     <!-- ECO -->
     <div class="coming-card eco">
@@ -288,7 +294,7 @@
   <div class="info-box">
     <span class="info-icon">💡</span>
     <p><strong>이 시리즈에 대해</strong><br>
-    "신앙과 이성"은 신학·성경학·자연과학·철학의 경계에 있는 질문들을 청소년과 대학생 눈높이에 맞춰 탐구하는 교육자료 시리즈입니다. 각 주제는 독립적으로 읽을 수 있지만, EC → BA → BH 순서로 읽으면 창세기 해석에서 시작해 성경의 권위, 역사성 문제로 자연스럽게 심화됩니다. Made by Isaac with Claude.</p>
+    "신앙과 이성"은 신학·성경학·자연과학·철학의 경계에 있는 질문들을 청소년과 대학생 눈높이에 맞춰 탐구하는 교육자료 시리즈입니다. 각 주제는 독립적으로 읽을 수 있지만, EC → BA → BH 순서로 읽으면 창세기 해석에서 시작해 성경의 권위, 역사성 문제로 자연스럽게 심화되며, AI 시리즈는 이 논의를 인공지능 시대의 인간론으로 확장하는 현대적 적용편입니다. Made by Isaac with Claude.</p>
   </div>
 
 </main>
