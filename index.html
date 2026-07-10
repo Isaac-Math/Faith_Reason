@@ -19,7 +19,7 @@
     --bh:  #8b5e3c; --bh-dark:  #4a2d0e; --bh-light:  #c8956a;
     --ai:  #274c77; --ai-dark:  #14213d; --ai-light:  #6096ba;
     --eco: #0f766e; --eco-dark: #0b4f4a; --eco-light: #52b7a8;
-    --jh:  #8c2f39; --jh-light:  #c2707a;
+    --jh:  #8c2f39; --jh-dark: #4a161f; --jh-light:  #c2707a;
     --pe:  #3d405b; --pe-light:  #d4a94c;
     --co:  #453a80; --co-light:  #8b7cc4;
     --tx:  #2f4858; --tx-light:  #6b8494;
@@ -131,6 +131,13 @@
   .series-card.eco .s-code { color: var(--eco); }
   .series-card.eco .s-btn { background: var(--eco); }
   .s-ver.done.eco-ver { background: #d8f0ec; color: var(--eco); }
+  /* JH */
+  .series-card.jh { border-color: var(--jh-light); }
+  .series-card.jh:hover { border-color: var(--jh); }
+  .series-card.jh::before { background: linear-gradient(90deg, var(--jh-light), var(--jh-dark)); }
+  .series-card.jh .s-code { color: var(--jh); }
+  .series-card.jh .s-btn { background: var(--jh); }
+  .s-ver.done.jh-ver { background: #f7e3e6; color: var(--jh); }
 
   .s-btn {
     margin-top: auto; display: inline-block; padding: 11px 0;
@@ -164,7 +171,6 @@
   }
   .coming-card.ai::before { background: linear-gradient(90deg, var(--ai-light), var(--ai)); opacity: .4; }
   .coming-card.eco::before { background: linear-gradient(90deg, var(--eco-light), var(--eco)); opacity: .4; }
-  .coming-card.jh::before { background: linear-gradient(90deg, var(--jh-light), var(--jh)); opacity: .4; }
   .coming-card.pe::before { background: linear-gradient(90deg, var(--pe-light), var(--pe)); opacity: .4; }
   .coming-card.co::before { background: linear-gradient(90deg, var(--co-light), var(--co)); opacity: .4; }
   .coming-card.tx::before { background: linear-gradient(90deg, var(--tx-light), var(--tx)); opacity: .4; }
@@ -301,23 +307,25 @@
       <span class="s-btn">시리즈 보기 →</span>
     </a>
 
+    <!-- JH -->
+    <a href="https://isaac-math.github.io/Jesus-History/" class="series-card jh">
+      <span class="s-emoji">✝️</span>
+      <span class="s-code">JH — 예수와 역사</span>
+      <span class="s-title">복음서는 믿을 만한가 —<br>역사로 읽는 예수와 부활</span>
+      <p class="s-desc">역사적 예수 탐구사, 고전 15:3-7 초기 신조 분석, 부활 가설 경쟁 평가, 하버마스 4부작까지 — BH의 신약 자매편.</p>
+      <div class="s-versions">
+        <span class="s-ver done jh-ver">청소년</span>
+        <span class="s-ver done jh-ver">대학생</span>
+        <span class="s-ver">어린이 미제작</span>
+      </div>
+      <span class="s-btn">시리즈 보기 →</span>
+    </a>
+
   </div>
 
   <p class="section-label">제작 예정 시리즈</p>
 
   <div class="coming-grid">
-
-    <!-- JH -->
-    <div class="coming-card jh">
-      <span class="coming-badge">준비중 · JH</span>
-      <span class="coming-title">예수와 역사<br>"복음서는 역사인가?"</span>
-      <p class="coming-desc">복음서 역사성, 고고학 증거, 부활 논증(하버마스 4부작), 초기 고기독론까지 — BH의 신약 후속편.</p>
-      <div class="coming-topics">
-        <span class="coming-topic">역사적 예수</span>
-        <span class="coming-topic">부활 논증</span>
-        <span class="coming-topic">고기독론</span>
-      </div>
-    </div>
 
     <!-- PE -->
     <div class="coming-card pe">
@@ -372,7 +380,7 @@
   <div class="info-box">
     <span class="info-icon">💡</span>
     <p><strong>이 시리즈에 대해</strong><br>
-    "신앙과 이성"은 신학·성경학·자연과학·철학의 경계에 있는 질문들을 청소년과 대학생 눈높이에 맞춰 탐구하는 교육자료 시리즈입니다. 각 주제는 독립적으로 읽을 수 있지만, EC → BA → BH 순서로 읽으면 창세기 해석에서 성경의 권위, 역사성 문제로 자연스럽게 심화되고, AI·ECO는 이 논의를 인공지능 시대의 인간론과 창조 돌봄으로 확장하는 현대적 적용편입니다. 앞으로 예수의 역사성(JH), 고난과 악의 문제(PE), 우주론(CO), 사본과 정경(TX), 고대근동 문헌(ANE) 다섯 시리즈가 추가되어 성경·과학·철학을 아우르는 10개 시리즈 커리큘럼으로 완성될 예정입니다. Made by Isaac with Claude.</p>
+    "신앙과 이성"은 신학·성경학·자연과학·철학의 경계에 있는 질문들을 청소년과 대학생 눈높이에 맞춰 탐구하는 교육자료 시리즈입니다. 각 주제는 독립적으로 읽을 수 있지만, EC → BA → BH → JH 순서로 읽으면 창세기 해석에서 성경의 권위, 구약 역사성, 신약 역사성(예수와 부활)까지 자연스럽게 심화되고, AI·ECO는 이 논의를 인공지능 시대의 인간론과 창조 돌봄으로 확장하는 현대적 적용편입니다. 앞으로 고난과 악의 문제(PE), 우주론(CO), 사본과 정경(TX), 고대근동 문헌(ANE) 네 시리즈가 추가되어 성경·과학·철학을 아우르는 10개 시리즈 커리큘럼으로 완성될 예정입니다. Made by Isaac with Claude.</p>
   </div>
 
 </main>
