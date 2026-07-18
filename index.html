@@ -52,24 +52,40 @@
     border-radius: 20px; padding: 4px 14px; font-size: .8rem; color: rgba(255,255,255,.85);
   }
 
-  /* ── 메인 ── */
-  main { flex: 1; max-width: 1020px; margin: 0 auto; padding: 56px 20px 80px; width: 100%; }
-
-  .section-label {
-    font-size: .8rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+  /* ── 관문 배너 ── */
+  .gateway-banner {
+    max-width: 1020px; margin: -26px auto 0; padding: 0 20px; position: relative; z-index: 2;
   }
-  .section-label::after { content: ''; flex: 1; height: 1px; background: #dee2e6; }
+  .gateway-banner a {
+    display: flex; align-items: center; gap: 14px; background: var(--card); color: var(--text);
+    text-decoration: none; border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 18px 24px; border: 1px solid #eee;
+  }
+  .gateway-banner .gw-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .gateway-banner .gw-text { flex: 1; }
+  .gateway-banner .gw-title { font-weight: 800; font-size: .98rem; margin-bottom: 2px; }
+  .gateway-banner .gw-sub { font-size: .82rem; color: var(--muted); }
+  .gateway-banner .gw-arrow { font-weight: 800; color: var(--muted); flex-shrink: 0; }
+  .gateway-banner a:hover { box-shadow: 0 10px 34px rgba(0,0,0,0.14); }
 
-  /* ── 시리즈 그리드 ── */
-  .series-grid {
+  /* ── 메인 ── */
+  main { flex: 1; max-width: 1020px; margin: 0 auto; padding: 40px 20px 80px; width: 100%; }
+
+  /* ── 트랙 섹션 ── */
+  .track-section { margin-bottom: 50px; }
+  .track-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }
+  .track-icon { font-size: 1.3rem; }
+  .track-title { font-size: 1.05rem; font-weight: 800; }
+  .track-desc { font-size: .85rem; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+
+  /* ── 시리즈 그리드 (완료+준비중 혼합) ── */
+  .track-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
-    margin-bottom: 44px;
   }
-  @media (max-width: 860px) { .series-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 560px) { .series-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) { .track-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .track-grid { grid-template-columns: 1fr; } }
 
   .series-card {
     background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
@@ -83,19 +99,16 @@
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
   }
 
-  /* EC */
   .series-card.ec { border-color: var(--ec-light); }
   .series-card.ec:hover { border-color: var(--ec); }
   .series-card.ec::before { background: linear-gradient(90deg, var(--ec-light), var(--ec-dark)); }
   .series-card.ec .s-code { color: var(--ec); }
   .series-card.ec .s-btn { background: var(--ec); }
-  /* BA */
   .series-card.ba { border-color: var(--ba-light); }
   .series-card.ba:hover { border-color: var(--ba); }
   .series-card.ba::before { background: linear-gradient(90deg, var(--ba-light), var(--ba-dark)); }
   .series-card.ba .s-code { color: var(--ba); }
   .series-card.ba .s-btn { background: var(--ba); }
-  /* BH */
   .series-card.bh { border-color: var(--bh-light); }
   .series-card.bh:hover { border-color: var(--bh); }
   .series-card.bh::before { background: linear-gradient(90deg, var(--bh-light), var(--bh-dark)); }
@@ -107,9 +120,7 @@
   .s-title { font-size: 1.2rem; font-weight: 800; line-height: 1.35; }
   .s-desc { font-size: .88rem; color: var(--muted); line-height: 1.7; }
 
-  .s-versions {
-    display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px;
-  }
+  .s-versions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px; }
   .s-ver {
     font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;
     background: #f1f3f5; color: var(--muted);
@@ -118,20 +129,17 @@
   .s-ver.done.ba-ver { background: #f3e5f5; color: var(--ba); }
   .s-ver.done.bh-ver { background: #fdf3ec; color: var(--bh); }
   .s-ver.done.ai-ver { background: #e8eef7; color: var(--ai); }
-  /* AI */
   .series-card.ai { border-color: var(--ai-light); }
   .series-card.ai:hover { border-color: var(--ai); }
   .series-card.ai::before { background: linear-gradient(90deg, var(--ai-light), var(--ai-dark)); }
   .series-card.ai .s-code { color: var(--ai); }
   .series-card.ai .s-btn { background: var(--ai); }
-  /* ECO */
   .series-card.eco { border-color: var(--eco-light); }
   .series-card.eco:hover { border-color: var(--eco); }
   .series-card.eco::before { background: linear-gradient(90deg, var(--eco-light), var(--eco-dark)); }
   .series-card.eco .s-code { color: var(--eco); }
   .series-card.eco .s-btn { background: var(--eco); }
   .s-ver.done.eco-ver { background: #d8f0ec; color: var(--eco); }
-  /* JH */
   .series-card.jh { border-color: var(--jh-light); }
   .series-card.jh:hover { border-color: var(--jh); }
   .series-card.jh::before { background: linear-gradient(90deg, var(--jh-light), var(--jh-dark)); }
@@ -153,32 +161,20 @@
   }
   .series-card:hover .s-btn { opacity: .88; }
 
-  /* ── 준비 중 그리드 ── */
-  .coming-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-bottom: 44px;
-  }
-  @media (max-width: 860px) { .coming-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 560px) { .coming-grid { grid-template-columns: 1fr; } }
-
+  /* ── 준비 중 카드 ── */
   .coming-card {
     background: var(--card); border-radius: var(--radius);
     box-shadow: 0 2px 12px rgba(0,0,0,0.05);
     padding: 28px 24px 24px;
     display: flex; flex-direction: column; gap: 10px;
     border: 2px dashed #dee2e6;
-    opacity: .6; cursor: default;
+    opacity: .68; cursor: default;
     position: relative; overflow: hidden;
   }
   .coming-card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
     background: #dee2e6;
   }
-  .coming-card.ai::before { background: linear-gradient(90deg, var(--ai-light), var(--ai)); opacity: .4; }
-  .coming-card.eco::before { background: linear-gradient(90deg, var(--eco-light), var(--eco)); opacity: .4; }
-  .coming-card.pe::before { background: linear-gradient(90deg, var(--pe-light), var(--pe)); opacity: .4; }
   .coming-card.co::before { background: linear-gradient(90deg, var(--co-light), var(--co)); opacity: .4; }
   .coming-card.tx::before { background: linear-gradient(90deg, var(--tx-light), var(--tx)); opacity: .4; }
   .coming-card.ane::before { background: linear-gradient(90deg, var(--ane-light), var(--ane)); opacity: .4; }
@@ -196,11 +192,33 @@
     background: #f4f6f9; color: var(--muted); border: 1px solid #dee2e6;
   }
 
+  /* ── 추천 학습 경로 ── */
+  .path-section { margin-bottom: 46px; }
+  .path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 700px) { .path-grid { grid-template-columns: 1fr; } }
+  .path-card {
+    background: var(--card); border-radius: var(--radius); box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    padding: 20px 22px;
+  }
+  .path-name { font-size: .95rem; font-weight: 800; margin-bottom: 4px; }
+  .path-desc { font-size: .82rem; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+  .path-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .path-chip {
+    font-size: .74rem; font-weight: 700; color: #fff; padding: 4px 11px; border-radius: 14px;
+    text-decoration: none;
+  }
+  .path-chip.disabled { background: #dee2e6 !important; color: var(--muted); pointer-events: none; }
+  .path-arrow { color: #ced4da; font-size: .8rem; }
+  .path-chip.ec{background:var(--ec)} .path-chip.ba{background:var(--ba)} .path-chip.bh{background:var(--bh)}
+  .path-chip.ai{background:var(--ai)} .path-chip.eco{background:var(--eco)} .path-chip.jh{background:var(--jh)}
+  .path-chip.pe{background:var(--pe)} .path-chip.co{background:var(--co)} .path-chip.tx{background:var(--tx)}
+  .path-chip.ane{background:var(--ane)} .path-chip.gw{background:#0f172a}
+
   /* ── 인포박스 ── */
   .info-box {
     background: var(--card); border-radius: var(--radius);
     padding: 22px 26px; box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-    margin-top: 40px; display: flex; gap: 14px; align-items: flex-start;
+    margin-top: 8px; display: flex; gap: 14px; align-items: flex-start;
     border-left: 4px solid #f4a261;
   }
   .info-icon { font-size: 1.5rem; flex-shrink: 0; }
@@ -219,7 +237,7 @@
     header { padding: 40px 16px 32px; }
     header h1 { font-size: 1.7rem; }
     header h1 span { display: block; margin: 4px 0 0; }
-    main { padding: 36px 14px 60px; }
+    main { padding: 30px 14px 60px; }
   }
 </style>
 </head>
@@ -238,157 +256,236 @@
   </div>
 </header>
 
+<div class="gateway-banner">
+  <a href="gateway.html">
+    <span class="gw-icon">🧭</span>
+    <span class="gw-text">
+      <span class="gw-title">처음이신가요? 5분 첫걸음 가이드</span>
+      <span class="gw-sub">"질문하는 신앙" — 어디서부터 읽어야 할지 안내해 드립니다</span>
+    </span>
+    <span class="gw-arrow">→</span>
+  </a>
+</div>
+
 <main>
 
-  <p class="section-label">완성된 시리즈</p>
+  <section class="track-section">
+    <div class="track-header"><span class="track-icon">📖</span><span class="track-title">성경 트랙</span></div>
+    <p class="track-desc">본문이 말하는 것, 본문이 전해진 과정, 그 본문이 서 있던 고대의 세계까지 — 성경 자체를 향한 질문들.</p>
+    <div class="track-grid">
 
-  <div class="series-grid">
+      <a href="https://isaac-math.github.io/Biblical-Authority/" class="series-card ba">
+        <span class="s-emoji">📜</span>
+        <span class="s-code">BA — 성경의 권위</span>
+        <span class="s-title">성경의 무오성과<br>권위의 근거</span>
+        <p class="s-desc">무오성 스펙트럼, 시카고 선언, 영감론, 정경 형성, 어려운 본문 다루기.</p>
+        <div class="s-versions">
+          <span class="s-ver done ba-ver">청소년</span>
+          <span class="s-ver done ba-ver">대학생</span>
+          <span class="s-ver">어린이 미제작</span>
+        </div>
+        <span class="s-btn">시리즈 보기 →</span>
+      </a>
 
-    <!-- EC -->
-    <a href="https://isaac-math.github.io/Evolutionary-Creation/" class="series-card ec">
-      <span class="s-emoji">🌿</span>
-      <span class="s-code">EC — 진화적 창조</span>
-      <span class="s-title">성경과 진화론,<br>함께 읽을 수 있을까?</span>
-      <p class="s-desc">창세기 해석, 진화생물학, 고대근동 신화, Imago Dei와 아담 문제까지.</p>
-      <div class="s-versions">
-        <span class="s-ver done">어린이</span>
-        <span class="s-ver done">청소년</span>
-        <span class="s-ver done">대학생</span>
+      <a href="https://isaac-math.github.io/Biblical-Historicity/" class="series-card bh">
+        <span class="s-emoji">🏛️</span>
+        <span class="s-code">BH — 역사성 논쟁</span>
+        <span class="s-title">출애굽과 다윗 왕국은<br>역사적 사건인가?</span>
+        <p class="s-desc">고고학과 성경, 핀켈스타인 vs 마자르, 텔 단 석비, DtrH, 에레프 가설.</p>
+        <div class="s-versions">
+          <span class="s-ver done bh-ver">청소년</span>
+          <span class="s-ver done bh-ver">대학생</span>
+          <span class="s-ver">어린이 미제작</span>
+        </div>
+        <span class="s-btn">시리즈 보기 →</span>
+      </a>
+
+      <div class="coming-card tx">
+        <span class="coming-badge">준비중 · TX</span>
+        <span class="coming-title">성경은 어떻게 우리 손에<br>"이 책은 어떻게 전해졌을까"</span>
+        <p class="coming-desc">사해사본과 본문비평, 정경 형성사, 한국어 성경 전래사(로스역 1882~).</p>
+        <div class="coming-topics">
+          <span class="coming-topic">본문비평</span>
+          <span class="coming-topic">정경 형성사</span>
+          <span class="coming-topic">한국 성경사</span>
+        </div>
       </div>
-      <span class="s-btn">시리즈 보기 →</span>
-    </a>
 
-    <!-- BA -->
-    <a href="https://isaac-math.github.io/Biblical-Authority/" class="series-card ba">
-      <span class="s-emoji">📜</span>
-      <span class="s-code">BA — 성경의 권위</span>
-      <span class="s-title">성경의 무오성과<br>권위의 근거</span>
-      <p class="s-desc">무오성 스펙트럼, 시카고 선언, 영감론, 정경 형성, 어려운 본문 다루기.</p>
-      <div class="s-versions">
-        <span class="s-ver done ba-ver">청소년</span>
-        <span class="s-ver done ba-ver">대학생</span>
-        <span class="s-ver">어린이 준비 중</span>
+      <div class="coming-card ane">
+        <span class="coming-badge">준비중 · ANE</span>
+        <span class="coming-title">성경과 고대근동 문헌<br>"성경의 이웃, 고대 문헌들"</span>
+        <p class="coming-desc">비교방법론, 에누마 엘리쉬, 길가메시 서사시, 함무라비 법전, 종주조약 — AI·ECO·BH를 잇는 크로스링크 허브.</p>
+        <div class="coming-topics">
+          <span class="coming-topic">에누마 엘리쉬</span>
+          <span class="coming-topic">길가메시</span>
+          <span class="coming-topic">종주조약</span>
+        </div>
       </div>
-      <span class="s-btn">시리즈 보기 →</span>
-    </a>
 
-    <!-- BH -->
-    <a href="https://isaac-math.github.io/Biblical-Historicity/" class="series-card bh">
-      <span class="s-emoji">🏛️</span>
-      <span class="s-code">BH — 역사성 논쟁</span>
-      <span class="s-title">출애굽과 다윗 왕국은<br>역사적 사건인가?</span>
-      <p class="s-desc">고고학과 성경, 핀켈스타인 vs 마자르, 텔 단 석비, DtrH, 에레프 가설.</p>
-      <div class="s-versions">
-        <span class="s-ver done bh-ver">청소년</span>
-        <span class="s-ver done bh-ver">대학생</span>
-        <span class="s-ver">어린이 준비 중</span>
-      </div>
-      <span class="s-btn">시리즈 보기 →</span>
-    </a>
+      <a href="https://isaac-math.github.io/Jesus-History/" class="series-card jh">
+        <span class="s-emoji">✝️</span>
+        <span class="s-code">JH — 예수와 역사</span>
+        <span class="s-title">복음서는 믿을 만한가 —<br>역사로 읽는 예수와 부활</span>
+        <p class="s-desc">역사적 예수 탐구사, 고전 15:3-7 초기 신조 분석, 부활 가설 경쟁 평가, 하버마스 4부작까지 — BH의 신약 자매편.</p>
+        <div class="s-versions">
+          <span class="s-ver done jh-ver">청소년</span>
+          <span class="s-ver done jh-ver">대학생</span>
+          <span class="s-ver">어린이 준비 중</span>
+        </div>
+        <span class="s-btn">시리즈 보기 →</span>
+      </a>
 
-    <!-- AI -->
-    <a href="https://isaac-math.github.io/AI-Faith/" class="series-card ai">
-      <span class="s-emoji">🤖</span>
-      <span class="s-code">AI — 인공지능과 신앙</span>
-      <span class="s-title">AI 시대, 하나님의 형상은<br>무엇을 뜻하는가</span>
-      <p class="s-desc">의식철학·영혼론 스펙트럼, 히브리어 형상론 원문 분석, Antiqua et Nova부터 Magnifica Humanitas까지.</p>
-      <div class="s-versions">
-        <span class="s-ver done ai-ver">청소년</span>
-        <span class="s-ver done ai-ver">대학생</span>
-        <span class="s-ver">어린이 미제작</span>
-      </div>
-      <span class="s-btn">시리즈 보기 →</span>
-    </a>
-
-    <!-- ECO -->
-    <a href="https://isaac-math.github.io/Eco-Theology/" class="series-card eco">
-      <span class="s-emoji">🌍</span>
-      <span class="s-code">ECO — 생태신학</span>
-      <span class="s-title">"다스리라"의 재발견 —<br>창조 돌봄의 성경신학</span>
-      <p class="s-desc">라다·카바쉬 원문 주해, 린 화이트 논쟁, 라우다토 시 심층 분석, 벧후 3:10 본문비평까지.</p>
-      <div class="s-versions">
-        <span class="s-ver done eco-ver">청소년</span>
-        <span class="s-ver done eco-ver">대학생</span>
-        <span class="s-ver">어린이 미제작</span>
-      </div>
-      <span class="s-btn">시리즈 보기 →</span>
-    </a>
-
-    <!-- JH -->
-    <a href="https://isaac-math.github.io/Jesus-History/" class="series-card jh">
-      <span class="s-emoji">✝️</span>
-      <span class="s-code">JH — 예수와 역사</span>
-      <span class="s-title">복음서는 믿을 만한가 —<br>역사로 읽는 예수와 부활</span>
-      <p class="s-desc">역사적 예수 탐구사, 고전 15:3-7 초기 신조 분석, 부활 가설 경쟁 평가, 하버마스 4부작까지 — BH의 신약 자매편.</p>
-      <div class="s-versions">
-        <span class="s-ver done jh-ver">청소년</span>
-        <span class="s-ver done jh-ver">대학생</span>
-        <span class="s-ver">어린이 미제작</span>
-      </div>
-      <span class="s-btn">시리즈 보기 →</span>
-    </a>
-
-    <a href="https://isaac-math.github.io/Problem-of-Evil/" class="series-card pe">
-      <span class="s-emoji">🕯️</span>
-      <span class="s-code">PE — 고난과 악의 문제</span>
-      <span class="s-title">선하신 하나님, 왜 고통이 있는가 —<br>밤의 신학, 그리고 새벽</span>
-      <p class="s-desc">지적 문제(변론·신정론)와 실존적 동행(욥·탄식·십자가)을 함께 — 자유의지 변론, 자연악과 진화(EC 연계), 시편 88편 탄식, 애덤스의 참혹악.</p>
-      <div class="s-versions">
-        <span class="s-ver done pe-ver">청소년</span>
-        <span class="s-ver done pe-ver">대학생</span>
-        <span class="s-ver">어린이 미제작</span>
-      </div>
-      <span class="s-btn">시리즈 보기 →</span>
-    </a>
-
-  </div>
-
-  <p class="section-label">제작 예정 시리즈</p>
-
-  <div class="coming-grid">
-
-    <!-- CO -->
-    <div class="coming-card co">
-      <span class="coming-badge">준비중 · CO</span>
-      <span class="coming-title">태초에: 우주론과 신앙<br>"우주의 시작, 성경과 만나다"</span>
-      <p class="coming-desc">빅뱅과 르메트르, 칼람 우주론 논증, 미세조정과 다중우주, creatio ex nihilo.</p>
-      <div class="coming-topics">
-        <span class="coming-topic">빅뱅</span>
-        <span class="coming-topic">칼람 논증</span>
-        <span class="coming-topic">미세조정</span>
-      </div>
     </div>
+  </section>
 
-    <!-- TX -->
-    <div class="coming-card tx">
-      <span class="coming-badge">준비중 · TX</span>
-      <span class="coming-title">성경은 어떻게 우리 손에<br>"이 책은 어떻게 전해졌을까"</span>
-      <p class="coming-desc">사해사본과 본문비평, 정경 형성사, 한국어 성경 전래사(로스역 1882~).</p>
-      <div class="coming-topics">
-        <span class="coming-topic">본문비평</span>
-        <span class="coming-topic">정경 형성사</span>
-        <span class="coming-topic">한국 성경사</span>
+  <section class="track-section">
+    <div class="track-header"><span class="track-icon">🔬</span><span class="track-title">과학 트랙</span></div>
+    <p class="track-desc">창조, 우주, 마음, 생태 — 과학이 그리는 세계와 신앙이 만나는(혹은 부딪히는) 지점들.</p>
+    <div class="track-grid">
+
+      <a href="https://isaac-math.github.io/Evolutionary-Creation/" class="series-card ec">
+        <span class="s-emoji">🌿</span>
+        <span class="s-code">EC — 진화적 창조</span>
+        <span class="s-title">성경과 진화론,<br>함께 읽을 수 있을까?</span>
+        <p class="s-desc">창세기 해석, 진화생물학, 고대근동 신화, Imago Dei와 아담 문제까지.</p>
+        <div class="s-versions">
+          <span class="s-ver done">어린이</span>
+          <span class="s-ver done">청소년</span>
+          <span class="s-ver done">대학생</span>
+        </div>
+        <span class="s-btn">시리즈 보기 →</span>
+      </a>
+
+      <div class="coming-card co">
+        <span class="coming-badge">준비중 · CO</span>
+        <span class="coming-title">태초에: 우주론과 신앙<br>"우주의 시작, 성경과 만나다"</span>
+        <p class="coming-desc">빅뱅과 르메트르, 칼람 우주론 논증, 미세조정과 다중우주, creatio ex nihilo.</p>
+        <div class="coming-topics">
+          <span class="coming-topic">빅뱅</span>
+          <span class="coming-topic">칼람 논증</span>
+          <span class="coming-topic">미세조정</span>
+        </div>
       </div>
-    </div>
 
-    <!-- ANE -->
-    <div class="coming-card ane">
-      <span class="coming-badge">준비중 · ANE</span>
-      <span class="coming-title">성경과 고대근동 문헌<br>"성경의 이웃, 고대 문헌들"</span>
-      <p class="coming-desc">비교방법론, 에누마 엘리쉬, 길가메시 서사시, 함무라비 법전, 종주조약 — AI·ECO·BH를 잇는 크로스링크 허브.</p>
-      <div class="coming-topics">
-        <span class="coming-topic">에누마 엘리쉬</span>
-        <span class="coming-topic">길가메시</span>
-        <span class="coming-topic">종주조약</span>
+      <a href="https://isaac-math.github.io/AI-Faith/" class="series-card ai">
+        <span class="s-emoji">🤖</span>
+        <span class="s-code">AI — 인공지능과 신앙</span>
+        <span class="s-title">AI 시대, 하나님의 형상은<br>무엇을 뜻하는가</span>
+        <p class="s-desc">의식철학·영혼론 스펙트럼, 히브리어 형상론 원문 분석, Antiqua et Nova부터 Magnifica Humanitas까지.</p>
+        <div class="s-versions">
+          <span class="s-ver done ai-ver">청소년</span>
+          <span class="s-ver done ai-ver">대학생</span>
+          <span class="s-ver">어린이 미제작</span>
+        </div>
+        <span class="s-btn">시리즈 보기 →</span>
+      </a>
+
+      <a href="https://isaac-math.github.io/Eco-Theology/" class="series-card eco">
+        <span class="s-emoji">🌍</span>
+        <span class="s-code">ECO — 생태신학</span>
+        <span class="s-title">"다스리라"의 재발견 —<br>창조 돌봄의 성경신학</span>
+        <p class="s-desc">라다·카바쉬 원문 주해, 린 화이트 논쟁, 라우다토 시 심층 분석, 벧후 3:10 본문비평까지.</p>
+        <div class="s-versions">
+          <span class="s-ver done eco-ver">청소년</span>
+          <span class="s-ver done eco-ver">대학생</span>
+          <span class="s-ver">어린이 준비 중</span>
+        </div>
+        <span class="s-btn">시리즈 보기 →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="track-section">
+    <div class="track-header"><span class="track-icon">💡</span><span class="track-title">철학·실천 트랙</span></div>
+    <p class="track-desc">왜 믿어야 하는가를 넘어, 어떻게 살아야 하는가 — 변증과 삶이 만나는 지점. 앞으로 가장 크게 자랄 트랙입니다.</p>
+    <div class="track-grid">
+
+      <a href="https://isaac-math.github.io/Problem-of-Evil/" class="series-card pe">
+        <span class="s-emoji">🕯️</span>
+        <span class="s-code">PE — 고난과 악의 문제</span>
+        <span class="s-title">선하신 하나님, 왜 고통이 있는가 —<br>밤의 신학, 그리고 새벽</span>
+        <p class="s-desc">지적 문제(변론·신정론)와 실존적 동행(욥·탄식·십자가)을 함께 — 자유의지 변론, 자연악과 진화(EC 연계), 시편 88편 탄식, 애덤스의 참혹악.</p>
+        <div class="s-versions">
+          <span class="s-ver done pe-ver">청소년</span>
+          <span class="s-ver done pe-ver">대학생</span>
+          <span class="s-ver">어린이 미제작</span>
+        </div>
+        <span class="s-btn">시리즈 보기 →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="path-section">
+    <div class="track-header"><span class="track-icon">🧭</span><span class="track-title">추천 학습 경로</span></div>
+    <p class="track-desc">무엇부터 읽을지 막막하다면, 아래 경로 중 하나를 따라가 보세요. 더 자세한 안내는 관문 코스에도 있습니다.</p>
+    <div class="path-grid">
+
+      <div class="path-card">
+        <p class="path-name">처음이라면</p>
+        <p class="path-desc">각론에 들어가기 전, 5분짜리 안내부터.</p>
+        <div class="path-chips"><a class="path-chip gw" href="gateway.html">질문하는 신앙</a></div>
       </div>
-    </div>
 
-  </div>
+      <div class="path-card">
+        <p class="path-name">종주 코스 (전체 완주)</p>
+        <p class="path-desc">창세기 해석에서 고난의 신학까지, 처음부터 끝까지.</p>
+        <div class="path-chips">
+          <a class="path-chip ec" href="https://isaac-math.github.io/Evolutionary-Creation/">EC</a><span class="path-arrow">→</span>
+          <a class="path-chip ba" href="https://isaac-math.github.io/Biblical-Authority/">BA</a><span class="path-arrow">→</span>
+          <a class="path-chip bh" href="https://isaac-math.github.io/Biblical-Historicity/">BH</a><span class="path-arrow">→</span>
+          <a class="path-chip jh" href="https://isaac-math.github.io/Jesus-History/">JH</a><span class="path-arrow">→</span>
+          <a class="path-chip pe" href="https://isaac-math.github.io/Problem-of-Evil/">PE</a>
+        </div>
+      </div>
+
+      <div class="path-card">
+        <p class="path-name">성경이 미덥지 않다면</p>
+        <p class="path-desc">권위 → 사본과 정경 → 역사성 → 고대근동까지 심화.</p>
+        <div class="path-chips">
+          <a class="path-chip ba" href="https://isaac-math.github.io/Biblical-Authority/">BA</a><span class="path-arrow">→</span>
+          <span class="path-chip tx disabled">TX</span><span class="path-arrow">→</span>
+          <a class="path-chip bh" href="https://isaac-math.github.io/Biblical-Historicity/">BH</a><span class="path-arrow">→</span>
+          <span class="path-chip ane disabled">ANE</span>
+        </div>
+      </div>
+
+      <div class="path-card">
+        <p class="path-name">부활이 궁금하다면</p>
+        <p class="path-desc">신약의 역사성에서 구약의 역사성으로.</p>
+        <div class="path-chips">
+          <a class="path-chip jh" href="https://isaac-math.github.io/Jesus-History/">JH</a><span class="path-arrow">→</span>
+          <a class="path-chip bh" href="https://isaac-math.github.io/Biblical-Historicity/">BH</a>
+        </div>
+      </div>
+
+      <div class="path-card">
+        <p class="path-name">고난 중이라면</p>
+        <p class="path-desc">고난과 악의 문제를 중심으로, 자연악과 부활 소망까지 연결.</p>
+        <div class="path-chips">
+          <a class="path-chip pe" href="https://isaac-math.github.io/Problem-of-Evil/">PE</a><span class="path-arrow">→</span>
+          <a class="path-chip ec" href="https://isaac-math.github.io/Evolutionary-Creation/">EC</a><span class="path-arrow">→</span>
+          <a class="path-chip jh" href="https://isaac-math.github.io/Jesus-History/">JH</a>
+        </div>
+      </div>
+
+      <div class="path-card">
+        <p class="path-name">AI·기후 시대의 신앙</p>
+        <p class="path-desc">가장 새로운 질문들에 성경이 말하는 것.</p>
+        <div class="path-chips">
+          <a class="path-chip ai" href="https://isaac-math.github.io/AI-Faith/">AI</a><span class="path-arrow">→</span>
+          <a class="path-chip eco" href="https://isaac-math.github.io/Eco-Theology/">ECO</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <div class="info-box">
     <span class="info-icon">💡</span>
     <p><strong>이 시리즈에 대해</strong><br>
-    "신앙과 이성"은 신학·성경학·자연과학·철학의 경계에 있는 질문들을 청소년과 대학생 눈높이에 맞춰 탐구하는 교육자료 시리즈입니다. 각 주제는 독립적으로 읽을 수 있지만, EC → BA → BH → JH 순서로 읽으면 창세기 해석에서 성경의 권위, 구약 역사성, 신약 역사성(예수와 부활)까지 자연스럽게 심화되고, AI·ECO·PE는 이 논의를 인공지능 시대의 인간론, 창조 돌봄, 고난의 신학으로 확장하는 현대적·실존적 적용편입니다. 앞으로 우주론(CO), 사본과 정경(TX), 고대근동 문헌(ANE) 세 시리즈가 추가되어 성경·과학·철학을 아우르는 10개 시리즈 커리큘럼으로 완성될 예정입니다. Made by Isaac with Claude.</p>
+    "신앙과 이성"은 신학·성경학·자연과학·철학의 경계에 있는 질문들을 청소년과 대학생 눈높이에 맞춰 탐구하는 교육자료 시리즈입니다. 처음 오셨다면 위의 <strong>관문 코스</strong>가 5분 안에 방향을 잡아드립니다. 전체 시리즈는 세 트랙으로 묶여 있습니다 — 성경 본문 자체를 다루는 <strong>📖 성경 트랙</strong>, 과학과 신앙이 만나는 <strong>🔬 과학 트랙</strong>, 변증과 삶의 실천을 다루는 <strong>💡 철학·실천 트랙</strong>. 각 주제는 독립적으로 읽을 수 있지만, 트랙 안에서 순서대로 읽으면 논의가 자연스럽게 심화됩니다. 앞으로 우주론(CO), 사본과 정경(TX), 고대근동 문헌(ANE)이 추가되고, 철학·실천 트랙도 계속 자라날 예정입니다. Made by Isaac with Claude.</p>
   </div>
 
 </main>
