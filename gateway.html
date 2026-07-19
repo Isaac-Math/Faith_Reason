@@ -135,7 +135,7 @@
     <p class="card-empathy">진화, 빅뱅, 우주의 나이 — 교실에서 배우는 것과 주일에 듣는 것이 다르게 느껴진다면, 그 불편함은 정직한 것입니다.</p>
     <div class="card-btns">
       <a class="map-btn ec" href="https://isaac-math.github.io/Evolutionary-Creation/" target="_blank" rel="noopener">EC 진화적 창조 →</a>
-      <span class="map-btn co disabled">CO 태초에 · 준비 중</span>
+      <a class="map-btn co" href="https://isaac-math.github.io/Cosmic-Creation/" target="_blank" rel="noopener">CO 태초에 →</a>
     </div>
   </div>
 
@@ -220,7 +220,7 @@
 
 <p>변증의 정확한 역할은 딱 여기까지입니다 — 장애물을 치우고, 신앙이 지성적으로 정직할 수 있음을 보여주는 것. 회심 자체는 성령의 일입니다. 그래서 상대는 이겨야 할 논제가 아니라 만나야 할 사람입니다. "너희 말을 항상 은혜 가운데서 소금으로 맛을 냄과 같이 하라 그리하면 각 사람에게 마땅히 대답할 것을 알리라"(골 4:6). 이기는 대화와 얻는 대화는 다릅니다.</p>
 
-<p>의심하고 계신 신자에게는 더 조심스럽게 말하고 싶습니다. 의심은 배교가 아니라, 자라는 신앙이 지나는 하나의 통과 지점일 수 있습니다. 한 아버지는 예수님 앞에서 이렇게 외쳤습니다 — "내가 믿나이다 나의 믿음 없는 것을 도와 주소서"(막 9:24). 이 모순된 문장이 그대로 성경에 남아 있다는 것 자체가 위로입니다. 유다는 이렇게 권합니다 — "어떤 의심하는 자들을 긍휼히 여기라"(유 1:22).</p>
+<p>의심하고 계신 신자에게는 더 조심스럽게 말하고 싶습니다. 의심은 배교가 아니라, 자라는 신앙이 지나는 하나의 통과 지점일 수 있습니다. 한 아버지는 예수님 앞에서 이렇게 외쳤습니다 — "내가 믿나이다 나의 믿음 없는 것을 도와주소서"(막 9:24). 이 모순된 문장이 그대로 성경에 남아 있다는 것 자체가 위로입니다. 유다는 이렇게 권합니다 — "어떤 의심하는 자들을 긍휼히 여기라"(유 1:22).</p>
 
 <p>이 사이트의 약속은 이것입니다. 반대편의 논거는 최강의 형태로 제시하고, 미해결은 미해결로 표기합니다. "과학이 하나님을 증명했다"는 식의 과장은 이 시리즈 어디에도 없습니다 — 그런 확신이 필요했다면 애초에 이 사이트는 만들어지지 않았을 것입니다.</p>
 
@@ -295,7 +295,7 @@ const SERIES = {
   ECO:{name:'ECO 생태신학', code:'eco', url:'https://isaac-math.github.io/Eco-Theology/', ok:true},
   JH:{name:'JH 예수와 역사', code:'jh', url:'https://isaac-math.github.io/Jesus-History/', ok:true},
   PE:{name:'PE 고난과 악의 문제', code:'pe', url:'https://isaac-math.github.io/Problem-of-Evil/', ok:true},
-  CO:{name:'CO 태초에(우주론)', code:'co', url:'#', ok:false},
+  CO:{name:'CO 태초에(우주론)', code:'co', url:'https://isaac-math.github.io/Cosmic-Creation/', ok:true},
   TX:{name:'TX 사본과 정경', code:'tx', url:'#', ok:false},
   ANE:{name:'ANE 고대근동 문헌', code:'ane', url:'#', ok:false}
 };
@@ -306,7 +306,7 @@ const DEFAULT_PATH = {
 };
 const OPENING = {
   a: '지금의 자리에서 한 걸음 더 단단해지고 싶으시군요 — 좋은 출발입니다.',
-  b: '의심과 함께 걷는 것도 순례입니다. 위의 <a href="#d4">담화 4 · 변증의 예의</a>를 다시 읽어보셔도 좋습니다.',
+  b: '의심과 함께 걷는 것도 순례입니다. 위의 담화4를 다시 읽어보셔도 좋습니다.',
   c: '환영합니다 — 저희는 설득이 아니라 지도를 드립니다.'
 };
 const answers = {q1:null,q2:null,q3:null};
@@ -338,7 +338,7 @@ function buildPath(q1, q3) {
 
 function renderResult() {
   const path = buildPath(answers.q1, answers.q3);
-  document.getElementById('diag-opening').innerHTML = OPENING[answers.q2];
+  document.getElementById('diag-opening').textContent = OPENING[answers.q2];
   document.getElementById('diag-path').textContent =
     '당신의 경로: ' + path.map(c => SERIES[c].name).join(' → ');
   const cardsEl = document.getElementById('diag-cards');

@@ -153,6 +153,12 @@
   .series-card.pe .s-btn { background: var(--pe); }
   .s-ver.done.jh-ver { background: #f7e3e6; color: var(--jh); }
   .s-ver.done.pe-ver { background: #e6e7ef; color: var(--pe); }
+  .series-card.co { border-color: var(--co-light); }
+  .series-card.co:hover { border-color: var(--co); }
+  .series-card.co::before { background: linear-gradient(90deg, var(--co-light), var(--co)); }
+  .series-card.co .s-code { color: var(--co); }
+  .series-card.co .s-btn { background: var(--co); }
+  .s-ver.done.co-ver { background: #e9e6f7; color: var(--co); }
 
   .s-btn {
     margin-top: auto; display: inline-block; padding: 11px 0;
@@ -282,7 +288,7 @@
         <div class="s-versions">
           <span class="s-ver done ba-ver">청소년</span>
           <span class="s-ver done ba-ver">대학생</span>
-          <span class="s-ver">어린이 미제작</span>
+          <span class="s-ver">어린이 준비 중</span>
         </div>
         <span class="s-btn">시리즈 보기 →</span>
       </a>
@@ -295,7 +301,7 @@
         <div class="s-versions">
           <span class="s-ver done bh-ver">청소년</span>
           <span class="s-ver done bh-ver">대학생</span>
-          <span class="s-ver">어린이 미제작</span>
+          <span class="s-ver">어린이 준비 중</span>
         </div>
         <span class="s-btn">시리즈 보기 →</span>
       </a>
@@ -330,7 +336,7 @@
         <div class="s-versions">
           <span class="s-ver done jh-ver">청소년</span>
           <span class="s-ver done jh-ver">대학생</span>
-          <span class="s-ver">어린이 준비 중</span>
+          <span class="s-ver">어린이 미제작</span>
         </div>
         <span class="s-btn">시리즈 보기 →</span>
       </a>
@@ -356,16 +362,18 @@
         <span class="s-btn">시리즈 보기 →</span>
       </a>
 
-      <div class="coming-card co">
-        <span class="coming-badge">준비중 · CO</span>
-        <span class="coming-title">태초에: 우주론과 신앙<br>"우주의 시작, 성경과 만나다"</span>
-        <p class="coming-desc">빅뱅과 르메트르, 칼람 우주론 논증, 미세조정과 다중우주, creatio ex nihilo.</p>
-        <div class="coming-topics">
-          <span class="coming-topic">빅뱅</span>
-          <span class="coming-topic">칼람 논증</span>
-          <span class="coming-topic">미세조정</span>
+      <a href="https://isaac-math.github.io/Cosmic-Creation/" class="series-card co">
+        <span class="s-emoji">🌌</span>
+        <span class="s-code">CO — 태초에</span>
+        <span class="s-title">우주에 시작이 있다는 발견,<br>창세기의 태초와 만나다</span>
+        <p class="s-desc">빅뱅과 르메트르, 칼람 우주론 논증, 미세조정과 다중우주, 무로부터의 창조까지 — EC의 우주적 확장판.</p>
+        <div class="s-versions">
+          <span class="s-ver done co-ver">청소년</span>
+          <span class="s-ver done co-ver">대학생</span>
+          <span class="s-ver">어린이 준비 중</span>
         </div>
-      </div>
+        <span class="s-btn">시리즈 보기 →</span>
+      </a>
 
       <a href="https://isaac-math.github.io/AI-Faith/" class="series-card ai">
         <span class="s-emoji">🤖</span>
@@ -388,7 +396,7 @@
         <div class="s-versions">
           <span class="s-ver done eco-ver">청소년</span>
           <span class="s-ver done eco-ver">대학생</span>
-          <span class="s-ver">어린이 준비 중</span>
+          <span class="s-ver">어린이 미제작</span>
         </div>
         <span class="s-btn">시리즈 보기 →</span>
       </a>
