@@ -159,6 +159,12 @@
   .series-card.co .s-code { color: var(--co); }
   .series-card.co .s-btn { background: var(--co); }
   .s-ver.done.co-ver { background: #e9e6f7; color: var(--co); }
+  .series-card.tx { border-color: var(--tx-light); }
+  .series-card.tx:hover { border-color: var(--tx); }
+  .series-card.tx::before { background: linear-gradient(90deg, var(--tx-light), var(--tx)); }
+  .series-card.tx .s-code { color: var(--tx); }
+  .series-card.tx .s-btn { background: var(--tx); }
+  .s-ver.done.tx-ver { background: #e3edf2; color: var(--tx); }
 
   .s-btn {
     margin-top: auto; display: inline-block; padding: 11px 0;
@@ -304,16 +310,17 @@
         <span class="s-btn">시리즈 보기 →</span>
       </a>
 
-      <div class="coming-card tx">
-        <span class="coming-badge">준비중 · TX</span>
-        <span class="coming-title">성경은 어떻게 우리 손에<br>"이 책은 어떻게 전해졌을까"</span>
-        <p class="coming-desc">사해사본과 본문비평, 정경 형성사, 한국어 성경 전래사(로스역 1882~).</p>
-        <div class="coming-topics">
-          <span class="coming-topic">본문비평</span>
-          <span class="coming-topic">정경 형성사</span>
-          <span class="coming-topic">한국 성경사</span>
+      <a href="https://isaac-math.github.io/Text-Canon/" class="series-card tx">
+        <span class="s-emoji">🏺</span>
+        <span class="s-code">TX — 사본·정경·번역</span>
+        <span class="s-title">성경은 어떻게<br>우리 손에 왔는가?</span>
+        <p class="s-desc">사해사본과 본문비평, 어만 논쟁, 정경 형성사, 번역사와 한국어 성경 전래사(로스역 1882~).</p>
+        <div class="s-versions">
+          <span class="s-ver done tx-ver">청소년</span>
+          <span class="s-ver done tx-ver">대학생</span>
         </div>
-      </div>
+        <span class="s-btn">시리즈 보기 →</span>
+      </a>
 
       <div class="coming-card ane">
         <span class="coming-badge">준비중 · ANE</span>
@@ -448,7 +455,7 @@
         <p class="path-desc">권위 → 사본과 정경 → 역사성 → 고대근동까지 심화.</p>
         <div class="path-chips">
           <a class="path-chip ba" href="https://isaac-math.github.io/Biblical-Authority/">BA</a><span class="path-arrow">→</span>
-          <span class="path-chip tx disabled">TX</span><span class="path-arrow">→</span>
+          <a class="path-chip tx" href="https://isaac-math.github.io/Text-Canon/">TX</a><span class="path-arrow">→</span>
           <a class="path-chip bh" href="https://isaac-math.github.io/Biblical-Historicity/">BH</a><span class="path-arrow">→</span>
           <span class="path-chip ane disabled">ANE</span>
         </div>
@@ -488,7 +495,7 @@
   <div class="info-box">
     <span class="info-icon">💡</span>
     <p><strong>이 시리즈에 대해</strong><br>
-    "신앙과 이성"은 신학·성경학·자연과학·철학의 경계에 있는 질문들을 청소년과 대학생 눈높이에 맞춰 탐구하는 교육자료 시리즈입니다. 처음 오셨다면 위의 <strong>관문 코스</strong>가 5분 안에 방향을 잡아드립니다. 전체 시리즈는 세 트랙으로 묶여 있습니다 — 성경 본문 자체를 다루는 <strong>📖 성경 트랙</strong>, 과학과 신앙이 만나는 <strong>🔬 과학 트랙</strong>, 변증과 삶의 실천을 다루는 <strong>💡 철학·실천 트랙</strong>. 각 주제는 독립적으로 읽을 수 있지만, 트랙 안에서 순서대로 읽으면 논의가 자연스럽게 심화됩니다. 앞으로 사본과 정경(TX), 고대근동 문헌(ANE)이 추가되고, 철학·실천 트랙도 계속 자라날 예정입니다. Made by Isaac with Claude.</p>
+    "신앙과 이성"은 신학·성경학·자연과학·철학의 경계에 있는 질문들을 청소년과 대학생 눈높이에 맞춰 탐구하는 교육자료 시리즈입니다. 처음 오셨다면 위의 <strong>관문 코스</strong>가 5분 안에 방향을 잡아드립니다. 전체 시리즈는 세 트랙으로 묶여 있습니다 — 성경 본문 자체를 다루는 <strong>📖 성경 트랙</strong>, 과학과 신앙이 만나는 <strong>🔬 과학 트랙</strong>, 변증과 삶의 실천을 다루는 <strong>💡 철학·실천 트랙</strong>. 각 주제는 독립적으로 읽을 수 있지만, 트랙 안에서 순서대로 읽으면 논의가 자연스럽게 심화됩니다. 앞으로 고대근동 문헌(ANE)이 추가되고, 철학·실천 트랙도 계속 자라날 예정입니다. Made by Isaac with Claude.</p>
   </div>
 
 </main>
