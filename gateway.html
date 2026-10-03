@@ -35,7 +35,7 @@
     --jh:#8c2f39; --pe:#3d405b; --co:#453a80; --tx:#2f4858; --ane:#a3512b;
   }
   * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif; background:var(--bg); color:var(--text); }
+  body { font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif; background:var(--bg); color:var(--text); word-break:keep-all;overflow-wrap:break-word; }
   a { color:inherit; }
   .top-bar { background:#0f172a; padding:10px 20px; }
   .top-bar a { color:#fff; text-decoration:none; font-size:.83rem; font-weight:600;
@@ -341,16 +341,19 @@ function selectAns(q, val, btn) {
   if (answers.q1 && answers.q2 && answers.q3) renderResult();
 }
 
-function q3Candidate(q1code, path, q3) {
-  if (q3 === 'a') return (path[0] === 'EC') ? 'CO' : 'EC';
-  if (q3 === 'b') return path.includes('BH') ? 'TX' : 'BH';
-  return path.includes('PE') ? 'CO' : 'PE';
-}
+// Q1(관심 질문)과 Q3(끌리는 이야기 스타일)의 조합마다 두 번째로 권할 시리즈 — 2026-10 결정표
+const Q3_PICK = {
+  EC:{a:'CO', b:'ANE', c:'PE'},
+  BA:{a:'EC', b:'TX',  c:'JH'},
+  JH:{a:'TX', b:'TX',  c:'CO'},
+  PE:{a:'EC', b:'ANE', c:'CO'},
+  AI:{a:'EC', b:'ANE', c:'PE'}
+};
 
 function buildPath(q1, q3) {
   const first = Q1_MAP[q1];
   const base = DEFAULT_PATH[first];
-  const cand = q3Candidate(first, base, q3);
+  const cand = Q3_PICK[first][q3];
   const out = [base[0]];
   if (!out.includes(cand)) out.push(cand);
   for (let i = 1; i < base.length && out.length < 3; i++) {

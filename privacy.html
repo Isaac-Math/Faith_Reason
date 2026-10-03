@@ -33,7 +33,9 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    word-break: keep-all; overflow-wrap: break-word;
   }
+  th, td { overflow-wrap: anywhere; }
 
   header {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f2027 100%);
