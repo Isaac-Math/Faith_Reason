@@ -188,6 +188,12 @@
   .series-card.tx .s-code { color: var(--tx); }
   .series-card.tx .s-btn { background: var(--tx); }
   .s-ver.done.tx-ver { background: #e3edf2; color: var(--tx); }
+  .series-card.ane { border-color: var(--ane-light); }
+  .series-card.ane:hover { border-color: var(--ane); }
+  .series-card.ane::before { background: linear-gradient(90deg, var(--ane-light), var(--ane)); }
+  .series-card.ane .s-code { color: var(--ane); }
+  .series-card.ane .s-btn { background: var(--ane); }
+  .s-ver.done.ane-ver { background: #f8e9df; color: var(--ane); }
 
   .s-btn {
     margin-top: auto; display: inline-block; padding: 11px 0;
@@ -345,16 +351,17 @@
         <span class="s-btn">시리즈 보기 →</span>
       </a>
 
-      <div class="coming-card ane">
-        <span class="coming-badge">준비중 · ANE</span>
-        <span class="coming-title">성경과 고대근동 문헌<br>"성경의 이웃, 고대 문헌들"</span>
-        <p class="coming-desc">비교방법론, 에누마 엘리쉬, 길가메시 서사시, 함무라비 법전, 종주조약 — AI·ECO·BH를 잇는 크로스링크 허브.</p>
-        <div class="coming-topics">
-          <span class="coming-topic">에누마 엘리쉬</span>
-          <span class="coming-topic">길가메시</span>
-          <span class="coming-topic">종주조약</span>
+      <a href="https://faithreason.kr/Bible-ANE/" class="series-card ane">
+        <span class="s-emoji">🔍</span>
+        <span class="s-code">ANE — 고대근동 문헌</span>
+        <span class="s-title">바빌론에도 홍수 이야기가?<br>비교와 대조로 읽는 성경</span>
+        <p class="s-desc">에누마 엘리쉬와 창세기, 길가메시 홍수, 함무라비와 모세, 히타이트 조약과 십계명, 우가릿과 시편 29편 — EC·BH·BA의 배경편.</p>
+        <div class="s-versions">
+          <span class="s-ver done ane-ver">청소년</span>
+          <span class="s-ver done ane-ver">대학생</span>
         </div>
-      </div>
+        <span class="s-btn">시리즈 보기 →</span>
+      </a>
 
       <a href="https://faithreason.kr/Jesus-History/" class="series-card jh">
         <span class="s-emoji">✝️</span>
@@ -480,7 +487,7 @@
           <a class="path-chip ba" href="https://faithreason.kr/Biblical-Authority/">BA</a><span class="path-arrow">→</span>
           <a class="path-chip tx" href="https://faithreason.kr/Text-Canon/">TX</a><span class="path-arrow">→</span>
           <a class="path-chip bh" href="https://faithreason.kr/Biblical-Historicity/">BH</a><span class="path-arrow">→</span>
-          <span class="path-chip ane disabled">ANE</span>
+          <a class="path-chip ane" href="https://faithreason.kr/Bible-ANE/">ANE</a>
         </div>
       </div>
 
@@ -518,7 +525,7 @@
   <div class="info-box">
     <span class="info-icon">💡</span>
     <p><strong>이 시리즈에 대해</strong><br>
-    "신앙과 이성"은 신학·성경학·자연과학·철학의 경계에 있는 질문들을 청소년과 대학생 눈높이에 맞춰 탐구하는 교육자료 시리즈입니다. 처음 오셨다면 위의 <strong>관문 코스</strong>가 5분 안에 방향을 잡아드립니다. 전체 시리즈는 세 트랙으로 묶여 있습니다 — 성경 본문 자체를 다루는 <strong>📖 성경 트랙</strong>, 과학과 신앙이 만나는 <strong>🔬 과학 트랙</strong>, 변증과 삶의 실천을 다루는 <strong>💡 철학·실천 트랙</strong>. 각 주제는 독립적으로 읽을 수 있지만, 트랙 안에서 순서대로 읽으면 논의가 자연스럽게 심화됩니다. 앞으로 고대근동 문헌(ANE)이 추가되고, 철학·실천 트랙도 계속 자라날 예정입니다. Made by Isaac with Claude.</p>
+    "신앙과 이성"은 신학·성경학·자연과학·철학의 경계에 있는 질문들을 청소년과 대학생 눈높이에 맞춰 탐구하는 교육자료 시리즈입니다. 처음 오셨다면 위의 <strong>관문 코스</strong>가 5분 안에 방향을 잡아드립니다. 전체 시리즈는 세 트랙으로 묶여 있습니다 — 성경 본문 자체를 다루는 <strong>📖 성경 트랙</strong>, 과학과 신앙이 만나는 <strong>🔬 과학 트랙</strong>, 변증과 삶의 실천을 다루는 <strong>💡 철학·실천 트랙</strong>. 각 주제는 독립적으로 읽을 수 있지만, 트랙 안에서 순서대로 읽으면 논의가 자연스럽게 심화됩니다. 성경 트랙은 고대근동 문헌(ANE)까지 갖추었고, 철학·실천 트랙은 앞으로 계속 자라날 예정입니다. Made by Isaac with Claude.</p>
   </div>
 
 </main>
