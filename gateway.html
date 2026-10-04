@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
   :root {
-    --bg:#f4f6f9; --card:#ffffff; --text:#1a1a2e; --muted:#6c757d;
+    --bg:#f4f6f9; --card:#ffffff; --text:#1a1a2e; --muted:#5c636a;
     --radius:16px; --shadow:0 4px 24px rgba(0,0,0,0.09);
     --ec:#2d6a4f; --ba:#7b2d8b; --bh:#8b5e3c; --ai:#274c77; --eco:#0f766e;
     --jh:#8c2f39; --pe:#3d405b; --co:#453a80; --tx:#2f4858; --ane:#a3512b;
@@ -100,6 +100,8 @@
   footer { background:#0f172a; color:rgba(255,255,255,.55); text-align:center; padding:26px 20px; font-size:.8rem; line-height:1.8; }
   footer a { color:rgba(255,255,255,.75); text-decoration:none; }
   footer a:hover { text-decoration:underline; }
+  /* nav로 이동했을 때 섹션 제목이 고정 nav 밑에 가리지 않게 */
+  section[id], #map, #diag { scroll-margin-top: 60px; }
 </style>
 </head>
 <body>
